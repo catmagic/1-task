@@ -1,6 +1,11 @@
 using System;
 class HelloWorld {
   static void Main() {
+      string[] arr=genarateArrayString(100,0,10);
+      foreach(string s in arr)
+      {
+           Console.WriteLine(s);
+      }
     Console.WriteLine(generateRandomString(0,10));
   }
   static char GetLetter()
@@ -22,5 +27,14 @@ class HelloWorld {
   static string generateRandomString(int minSize,int maxSize)
   {
       return generateRandomStringWithSize(new Random().Next(minSize, maxSize + 1));
+  }
+  static string[] genarateArrayString(int arraySize,int minLenght,int maxLenght)
+  {
+      string[] arrayString=new string[arraySize];
+      for(int i=0;i<arraySize;++i)
+      {
+          arrayString[i]=generateRandomString(minLenght,maxLenght);
+      }
+      return arrayString;
   }
 }
