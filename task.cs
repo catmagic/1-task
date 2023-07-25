@@ -1,10 +1,14 @@
 using System;
 class HelloWorld {
   static void Main() {
-      string[] arr=genarateArrayString(100,0,10);
+      int sortLength=3;
+      int LengthMax=10;
+      int LengthMin=0;
+      int sizeArray=100;
+      string[] arr=genarateArrayString(sizeArray,LengthMin,LengthMax);
       WriteArrayString(arr);
-      Console.WriteLine("\n"+count_if(arr,3));
-      WriteArrayString(array_if(arr,3));
+      Console.WriteLine("\n"+count_if(arr,sortLength));
+      WriteArrayString(array_if(arr,sortLength));
     
   }
   static int count_if(string[] arr,int size)
