@@ -1,7 +1,7 @@
 using System;
 class HelloWorld {
   static void Main() {
-    Console.WriteLine(generateRandomStringWithSize(10));
+    Console.WriteLine(generateRandomString(0,10));
   }
   static char GetLetter()
 {
@@ -18,5 +18,9 @@ class HelloWorld {
           s+=GetLetter();
       }
       return s;
+  }
+  static string generateRandomString(int minSize,int maxSize)
+  {
+      return generateRandomStringWithSize(new Random().Next(minSize, maxSize + 1));
   }
 }
