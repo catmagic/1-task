@@ -2,8 +2,9 @@ using System;
 class HelloWorld {
   static void Main() {
       string[] arr=genarateArrayString(100,0,10);
-      Console.WriteLine(count_if(arr,3));
       WriteArrayString(arr);
+      Console.WriteLine("\n"+count_if(arr,3));
+      WriteArrayString(array_if(arr,3));
     
   }
   static int count_if(string[] arr,int size)
@@ -58,5 +59,18 @@ class HelloWorld {
           WriteString(arrayString[i]);
       }
       Console.Write("]");
+  }
+     static string[] array_if(string[] arr,int size)
+  {
+      string[] result=new string[count_if(arr,size)];
+      int index=0;
+      foreach(string s in arr)
+      {
+          if(s.Length<=size)
+          {
+              result[index++]=s;
+          }
+      }
+      return result;
   }
 }
