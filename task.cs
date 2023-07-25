@@ -2,11 +2,8 @@ using System;
 class HelloWorld {
   static void Main() {
       string[] arr=genarateArrayString(100,0,10);
-      foreach(string s in arr)
-      {
-           Console.WriteLine(s);
-      }
-    Console.WriteLine(generateRandomString(0,10));
+      WriteArrayString(arr);
+    
   }
   static char GetLetter()
 {
@@ -36,5 +33,20 @@ class HelloWorld {
           arrayString[i]=generateRandomString(minLenght,maxLenght);
       }
       return arrayString;
+  }
+  static void WriteString(string s)
+  {
+      Console.Write("\""+s+"\"");
+  }
+  static void WriteArrayString(string[] arrayString)
+  {
+      Console.Write("[");
+      WriteString(arrayString[0]);
+      for(int i=1;i<arrayString.Length;++i)
+      {
+          Console.Write(", ");
+          WriteString(arrayString[i]);
+      }
+      Console.Write("]");
   }
 }
