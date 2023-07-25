@@ -2,8 +2,18 @@ using System;
 class HelloWorld {
   static void Main() {
       string[] arr=genarateArrayString(100,0,10);
+      Console.WriteLine(count_if(arr,3));
       WriteArrayString(arr);
     
+  }
+  static int count_if(string[] arr,int size)
+  {
+      int count=0;
+      foreach(string s in arr)
+      {
+          count+=(s.Length<=size)?1:0;
+      }
+      return count;
   }
   static char GetLetter()
 {
